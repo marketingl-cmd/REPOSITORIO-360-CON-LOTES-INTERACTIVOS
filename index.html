@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101816">
+  <meta name="description" content="Explora una fotografía panorámica en 360 grados con Marzipano.">
+  <title>Panorama 360°</title>
+  <link rel="stylesheet" href="./estilos.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marzipano/0.10.2/marzipano.min.js"
+          integrity="sha512-yXzJzoGCljUpxjkFmg+6No2leY9Dp0/PpQiVkIQ+uZLAb5xwsTAY2I5l/Wm7rmjDk0nRh3Q2Cr5T5cSh1OHJBw==" crossorigin="anonymous" defer></script>
+  <script src="./visor.js" defer></script>
+</head>
+<body>
+  <header class="encabezado">
+    <span class="marca" aria-hidden="true"><i></i></span>
+    <h1>Panorama <span>360°</span></h1>
+  </header>
+  <main>
+    <section class="marco" id="marco" aria-label="Visor panorámico">
+      <div id="panorama" class="panorama" tabindex="0" aria-label="Fotografía de un camino rural en 360 grados" aria-describedby="ayuda"></div>
+      <p class="estado" id="estado" role="status">Cargando panorama…</p>
+      <noscript><p class="estado">Activa JavaScript para explorar el panorama.</p></noscript>
+      <div class="interfaz">
+        <p class="ayuda" id="ayuda">
+          <span class="icono-arrastrar" aria-hidden="true">✥</span>
+          <span>Arrastra para mirar alrededor</span>
+        </p>
+        <div class="controles" role="group" aria-label="Controles del panorama">
+          <button type="button" id="alejar" aria-label="Alejar" title="Alejar" disabled><span aria-hidden="true">−</span></button>
+          <button type="button" id="acercar" aria-label="Acercar" title="Acercar" disabled><span aria-hidden="true">+</span></button>
+          <button type="button" id="reiniciar" aria-label="Restablecer vista" title="Restablecer vista" disabled><span aria-hidden="true">↺</span></button>
+          <button type="button" id="pantalla" aria-label="Pantalla completa" title="Pantalla completa" hidden disabled><span class="icono-pantalla" aria-hidden="true"></span></button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

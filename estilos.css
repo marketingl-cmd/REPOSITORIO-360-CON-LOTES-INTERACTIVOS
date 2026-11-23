@@ -1,0 +1,46 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, sans-serif;
+  color: #f1f5f0;
+  background: #101816;
+  --acento: #c8efae;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; min-height: 100dvh; display: grid; grid-template-rows: auto 1fr; }
+.encabezado { display: flex; align-items: center; gap: .8rem; padding: 1.1rem clamp(1rem, 3vw, 2.5rem); }
+h1 { margin: 0; font-size: clamp(1.35rem, 2.8vw, 1.85rem); letter-spacing: -.05em; font-weight: 650; }
+h1 span { color: var(--acento); }
+.marca { display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border: 1px solid #425a3d; border-radius: .72rem; background: #263a28; }
+.marca i { position: relative; width: 1.23rem; height: 1.23rem; border: 1.5px solid var(--acento); border-radius: 50%; }
+.marca i::before { content: ""; position: absolute; inset: 0 .27rem; border-inline: 1px solid var(--acento); border-radius: 50%; }
+.marca i::after { content: ""; position: absolute; inset: 47% 0 auto; border-top: 1px solid var(--acento); }
+main { display: grid; padding: 0 clamp(.65rem, 3vw, 2.5rem) clamp(.65rem, 3vw, 2rem); }
+.marco { min-height: 15rem; position: relative; overflow: hidden; isolation: isolate; border-radius: 1rem; border: 1px solid #405044; background: #253e44 url("./pruebaPanorama.jpg") center / cover no-repeat; }
+.marco:fullscreen { width: 100%; height: 100%; border: 0; border-radius: 0; }
+.panorama { position: absolute; inset: 0; cursor: grab; touch-action: none; }
+.panorama:active { cursor: grabbing; }
+.panorama:focus-visible { outline: 2px solid var(--acento); outline-offset: -4px; z-index: 1; }
+.interfaz { position: absolute; z-index: 2; inset: auto 0 0; display: flex; align-items: end; flex-wrap: wrap; justify-content: space-between; gap: .75rem; padding: clamp(.65rem, 2vw, 1.35rem); background: linear-gradient(transparent, #10181699); pointer-events: none; }
+.ayuda, .controles, .estado { color: #f5f8f4; background: #111a17f2; border: 1px solid #ffffff36; box-shadow: 0 6px 20px #0003; }
+.ayuda { display: flex; align-items: center; gap: .55rem; margin: 0; min-height: 2.875rem; border-radius: .75rem; padding: .5rem .8rem; font-size: .875rem; }
+.icono-arrastrar { font-size: 1.15rem; color: var(--acento); }
+.controles { display: flex; padding: .2rem; border-radius: .75rem; pointer-events: auto; }
+button { width: 2.75rem; height: 2.75rem; display: grid; place-items: center; padding: 0; border: 0; border-radius: .5rem; background: transparent; color: inherit; font: inherit; font-size: 1.4rem; cursor: pointer; }
+button:hover:not(:disabled) { background: #344634; color: var(--acento); }
+button:focus-visible { outline: 2px solid var(--acento); outline-offset: -2px; }
+button:disabled { opacity: .45; cursor: default; }
+.icono-pantalla { width: 1.05rem; height: 1.05rem; background:
+  linear-gradient(currentColor, currentColor) left top / 32% 2px no-repeat,
+  linear-gradient(currentColor, currentColor) left top / 2px 32% no-repeat,
+  linear-gradient(currentColor, currentColor) right top / 32% 2px no-repeat,
+  linear-gradient(currentColor, currentColor) right top / 2px 32% no-repeat,
+  linear-gradient(currentColor, currentColor) left bottom / 32% 2px no-repeat,
+  linear-gradient(currentColor, currentColor) left bottom / 2px 32% no-repeat,
+  linear-gradient(currentColor, currentColor) right bottom / 32% 2px no-repeat,
+  linear-gradient(currentColor, currentColor) right bottom / 2px 32% no-repeat; }
+.estado { position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); width: max-content; max-width: calc(100% - 2rem); margin: 0; padding: .75rem 1rem; border-radius: .75rem; text-align: center; pointer-events: none; }
+[hidden] { display: none !important; }
+@media (max-width: 480px) {
+  .interfaz { flex-direction: column; align-items: center; }
+  .ayuda { min-height: 2.4rem; }
+}
